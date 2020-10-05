@@ -25,8 +25,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $user = Auth::user();
-        return view('home', compact('user'));
+        if(Auth::user()->userType == 0){
+            $user = Auth::user();
+            return view('home', compact('user'));
+        }
+        else{
+            return view('staff.home');
+        }
+        
     }
 
     public function update(Request $request){

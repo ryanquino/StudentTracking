@@ -20,4 +20,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/staffHome', 'ReportController@index')->name('staffHome');
 Route::post('/updateStudent', 'HomeController@update');
