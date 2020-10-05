@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -26,5 +27,17 @@ class HomeController extends Controller
     {
         $user = Auth::user();
         return view('home', compact('user'));
+    }
+
+    public function update(Request $request){
+        $user = User::find($request->id);
+        $user->firstname = $request->firstname;
+        $user->lastname = $request->lastname;
+        $user->email = $request->email;
+        $user->courseId = $request->courseId;
+
+        $user->save();
+
+        return back()->withSuccess("Information updated successfully.");
     }
 }

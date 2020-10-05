@@ -8,7 +8,14 @@
                 <div class="card-header">{{ __('Personal Information') }}</div>
 
                 <div class="card-body">
-                    <form>
+                    @if(session('success'))
+                    <div class="alert alert-success alert-block">
+                        <button type="button" class="close" data-dismiss="alert">x</button>
+                        <strong>{{session('success')}}</strong>
+                    </div>
+                    @endif
+                    <form method="post" action="/updateStudent">
+                    @csrf
                       <div class="form-group">
                         <label for="id">Id</label>
                         <input type="text" class="form-control" id="id" name="id" value="{{$user->id}}">
