@@ -54,10 +54,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="Course" class="col-md-4 col-form-label text-md-right">{{ __('Course') }}</label>
+                            <label for="courseId" class="col-md-4 col-form-label text-md-right">{{ __('Course') }}</label>
 
                             <div class="col-md-6">
-                                <select id="course" class="form-control @error('course') is-invalid @enderror" name="course">
+                                <select id="courseId" class="form-control @error('courseId') is-invalid @enderror" name="courseId">
                                     <option value="1">BSCS</option>
                                     <option value="2">BSIT</option>
                                     <option value="3">BSECE</option>
