@@ -22,3 +22,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/staffHome', 'ReportController@index')->name('staffHome');
 Route::post('/updateStudent', 'HomeController@update');
+Route::get('/comments/{id}', 'CommentController@index')->name('comments');
+Route::post('/postComment', 'CommentController@store')->name('postComment');
